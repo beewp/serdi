@@ -1,0 +1,35 @@
+import { Connection, Repository } from 'typeorm';
+import { RecruitApplies } from './entity/RecruitApplies';
+import { RecruitKeeps } from './entity/RecruitKeeps';
+import { RecruitComments } from './entity/RecruitComments';
+import { RecruitPostImages } from './entity/RecruitPostImages';
+import { RecruitPosts } from './entity/RecruitPosts';
+import { RecruitStacks } from './entity/RecruitStacks';
+import { RecruitTasks } from './entity/RecruitTasks';
+import { Users } from 'src/user/entity/Users';
+export declare class RecruitPostService {
+    private UsersRepository;
+    private recruitAppliesRepository;
+    private recruitKeepsRepository;
+    private recruitCommentsRepository;
+    private recruitPostImagesRepository;
+    private recruitStacksRepository;
+    private recruitTasksRepository;
+    private recruitPostsRepository;
+    private connection;
+    constructor(UsersRepository: Repository<Users>, recruitAppliesRepository: Repository<RecruitApplies>, recruitKeepsRepository: Repository<RecruitKeeps>, recruitCommentsRepository: Repository<RecruitComments>, recruitPostImagesRepository: Repository<RecruitPostImages>, recruitStacksRepository: Repository<RecruitStacks>, recruitTasksRepository: Repository<RecruitTasks>, recruitPostsRepository: Repository<RecruitPosts>, connection: Connection);
+    ReadAllRecruits(loginId: string, order: number, items: number, location: number | null, task: number | null, stacks: number[] | null, lastId: number | null): Promise<any>;
+    ReadSpecificRecruits(recruitPostId: number): Promise<RecruitPosts>;
+    createRecruit(recruitPost: RecruitPosts, imgUrls: string[], stacks: RecruitStacks[], tasks: RecruitTasks[]): Promise<void>;
+    updateRecruitPost(recruitPost: RecruitPosts, recruitPostImages: string[], recruitStacks: RecruitStacks[], recruitTasks: RecruitTasks[]): Promise<void>;
+    createComment(recruitPostId: number, comment: object): Promise<void>;
+    updateComment(commentId: number, comment: object): Promise<void>;
+    createKeepIt(keepIt: RecruitKeeps): Promise<void>;
+    createApply(apply: object): Promise<void>;
+    deleteComment(commentId: number): Promise<void>;
+    deleteKeepIt(recruitKeepId: number): Promise<void>;
+    deleteApply(applyId: number): Promise<void>;
+    mappingImages(images: RecruitPostImages[], recruitPostId?: number): RecruitPostImages[];
+    mappingStacks(stacks: RecruitStacks[], recruitPostId?: number): RecruitStacks[];
+    mappingTasks(tasks: RecruitTasks[], recruitPostId?: number): RecruitTasks[];
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"apply.dto.js","sourceRoot":"","sources":["../../../../src/recruitPost/DTO/apply.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,6CAA8C;AAE9C,MAAa,eAAe;CAY3B;AAPC;IAJC,IAAA,qBAAW,EAAC;QACX,OAAO,EAAE,OAAO;QAChB,WAAW,EAAE,QAAQ;KACtB,CAAC;;qDAC0B;AAM5B;IAJC,IAAA,qBAAW,EAAC;QACX,OAAO,EAAE,GAAG;QACZ,WAAW,EAAE,oBAAoB;KAClC,CAAC;;6CACkB;AAXtB,0CAYC"}
